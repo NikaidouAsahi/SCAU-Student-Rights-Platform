@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>华南农业大学学生权益平台</title>
+    <link rel="stylesheet" th:href="@{/layui/src/css/layui.css}">
+</head>
+<body>
+
+<ul class="layui-nav layui-nav-tree layui-nav-side layui-bg-cyan" lay-filter="nav-side">
+    <li class="layui-nav-item layui-bg-green" lay-unselect><a href="javascript:;">学生权益平台</a></li>
+    <li class="layui-nav-item layui-nav-itemed">
+        <a href="javascript:;">学习及生活常见问题</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">后勤相关问题</a></dd>
+            <dd><a href="javascript:;">公寓相关问题</a></dd>
+            <dd><a href="javascript:;">保卫相关问题</a></dd>
+            <dd><a href="javascript:;">教务相关问题</a></dd>
+            <dd><a href="javascript:;">现教相关问题</a></dd>
+            <dd><a href="javascript:;">其他问题</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="javascript:;">校长有约</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">"校长有约"</a></dd>
+            <dd><a href="javascript:;">提案落实</a></dd>
+            <dd><a href="javascript:;">权益小册</a></dd>
+            <dd><a href="javascript:;">提案征集</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item"><a href="http://estop.scau.edu.cn/portal/service_guide.jsp?gid=87">校内报修</a></li>
+    <li class="layui-nav-item"><a href="http://estop.scau.edu.cn/portal/letter_sy.jsp">校长信箱</a></li>
+</ul>
+<script th:src="@{/layui/src/layui.js}"></script>
+<script>
+    //千万别动这里 我也不知道为什么能运行
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+        layer.msg('华南农业大学学生权益平台');
+    });
+
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //一些事件触发
+        element.on('tab(demo)', function(data){
+            console.log(data);
+        });
+    });
+</script>
+</body>
+</html>

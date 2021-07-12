@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公寓相关问题</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <style>
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md8">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-bus icon"></i>公寓相关问题</div>
+                            <div class="layui-card-body">
+                                <div class="layui-font-20 layui-font-green">
+                                    1. 关于宿舍区停车问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　学生处已在泰山和启林南区楼栋间的空地上新建一批停车棚，拟在其他宿舍区空地再建，并结合宿舍区架空层改造情况进一步做好优化。
+                                </div>                               
+                                <div class="layui-font-20 layui-font-green">
+                                    2. 关于宿舍换新和墙壁问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　部分学生宿舍已经得到解决，如华山学生宿舍在开学前就已经做到床位的换新，其他宿舍会陆续更换。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    3. 关于宿舍垃圾分类问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　学生处已在泰山区 15 栋试点垃圾下楼，并将相关宿舍区垃圾下楼初步选点情况上报，拟协同后勤处，进一步推进垃圾分类和垃圾下楼相关工作。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    4. 关于热水卡充值方式的改进及补办地点增加问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　后勤处去年在泰山区 24 栋和启林区 51 栋安装新智能热水表，试点手机网上充值消费热水效果不理想。目前，后勤处、财务处与热水公司正在研究新的方案，通过转入校园卡实现热水线上充值；由于热水公司新旧员工交接， 两周前暂停了部分服务点的补卡服务，现在所有服务点均可办理补卡，无需跨区补卡。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    5. 关于加强对进出校园及寝室人员管控问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　学生处回复，学生宿舍门禁制度明确规定外来人员需进行申报与登记，现在各楼栋开展员工“亮牌”工程，公开当班安保人员等姓名与联系方式，同学们可及时联系反馈，加强联动，同时，拟协同保卫处申请经费做好学生宿舍监控改造升级的工作。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    6. 关于更新宿舍水龙头，厕所冲水阀等配件问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　学生公寓中心己对华山区学生宿舍卫生间冲水阀进行检修，因工程系统较复杂，目前采用新建水龙头替代原有方式，较快解决了日常冲水问题，拟进一步对冲水阀情况进行研判处置。
+                                </div>  
+                                <div class="layui-font-20 layui-font-green">
+                                    7. 关于在学生社区设立外卖站问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　由于收纳柜涉及宿舍线路改造，日常维护等问题，学生宿舍暂不具备设置收纳柜的条件，建议学生从健康和安全考虑，少订甚至不订外卖，尽量到食堂用餐；学生处拟进一步申报宿舍楼下监控设备更新项目，加强安保工作， 并协同各学院加强学生纪律教育，杜绝偷拿外卖的现象。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    8. 关于学生公寓热水供应问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　学生公寓热水供应时间为6：30-8：00 、16：00-23：00。由于学生公寓采用太阳能储水式供应热水，加热时间较长，每天供应热水量有限。因此暂时无法实现全天热水供应。其次由于早间热水使用的人较少，热水经管道运送可能存在短暂的“迟到”的现象。
+                                </div>
+                                <div class="layui-font-20 layui-font-green">
+                                    9. 学生公寓电表计费过高问题
+                                </div>
+                                <div class="layui-font-16 layui-font-cyan">
+                                    　　电表计费过高存在两种可能性，第一种是由于个人疏忽导致宿舍有潜在耗电电器长期未断电造成的。第二种可能是由电表工作故障造成的。若是电表故障请及时联系学生公寓管理中心进行维修或更换（联系电话：85280022   地址：华山区19栋）
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-col-md4">
+
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
+                    <div class="layui-card-body layui-text">
+                        <div class="layuimini-notice">
+                            <div class="layuimini-notice-title">测试</div>
+                            <div class="layuimini-notice-extra">2021-07-07 11:36</div>
+                            <div class="layuimini-notice-content layui-hide">
+                                试图把我激怒<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="layui-card">
+                    <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>其他</div>
+                    <div class="layui-card-body layui-text layadmin-text">
+                        <div>
+                            <img class="img-scale" src="../images/a1_bg.jpg"></img>
+                        </div>
+                    </div>
+                    <style type="text/css">
+                        .img-scale{
+                            height: auto;
+                            width: 100%;
+                        }
+                    </style>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+    layui.use(['layer', 'miniTab','echarts'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            miniTab = layui.miniTab,
+            echarts = layui.echarts;
+
+        miniTab.listen();
+
+        /**
+         * 查看公告信息
+         **/
+        $('body').on('click', '.layuimini-notice', function () {
+            var title = $(this).children('.layuimini-notice-title').text(),
+                noticeTime = $(this).children('.layuimini-notice-extra').text(),
+                content = $(this).children('.layuimini-notice-content').html();
+            var html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #2f4056;color: #ffffff">\n' +
+                '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
+                '<div style="font-size: 12px">' + content + '</div>\n' +
+                '</div>\n';
+            parent.layer.open({
+                type: 1,
+                title: '系统公告'+'<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">'+noticeTime+'</span>',
+                area: '300px;',
+                shade: 0.8,
+                id: 'layuimini-notice',
+                btn: ['查看', '取消'],
+                btnAlign: 'c',
+                moveType: 1,
+                content:html,
+                success: function (layero) {
+                    var btn = layero.find('.layui-layer-btn');
+                    btn.find('.layui-layer-btn0').attr({
+                        href: 'https://gitee.com/zhongshaofa/layuimini',
+                        target: '_blank'
+                    });
+                }
+            });
+        });
+
+        // echarts 窗口缩放自适应
+        window.onresize = function(){
+            echartsRecords.resize();
+        }
+
+    });
+</script>
+</body>
+</html>

@@ -41,13 +41,19 @@
             },
             {
               "title": "教务相关问题",
-              "href": "page/404.html",
+              "href": "page/a4.html",
               "icon": "fa fa-tachometer",
               "target": "_self"
             },
             {
               "title": "现教相关问题",
               "href": "page/404.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "其他问题",
+              "href": "page/a5.html",
               "icon": "fa fa-tachometer",
               "target": "_self"
             }

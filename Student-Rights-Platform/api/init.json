@@ -58,6 +58,44 @@
               "target": "_self"
             }
           ]
+        },
+        {
+          "title": "校长有约",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "第12期校长有约",
+              "href": "page/xiaozhangyouyue12.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "第13期校长有约",
+              "href": "page/xiaozhangyouyue13.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "第14期校长有约",
+              "href": "page/xiaozhangyouyue14.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "第15期校长有约",
+              "href": "page/xiaozhangyouyue15.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "第16期校长有约",
+              "href": "page/xiaozhangyouyue16.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
         }
       ]
     }

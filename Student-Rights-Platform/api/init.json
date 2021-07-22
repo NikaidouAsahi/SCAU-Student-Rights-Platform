@@ -96,6 +96,12 @@
               "target": "_self"
             }
           ]
+        },
+        {
+          "title": "留言板",
+          "href": "page/liuyanban.html",
+          "icon": "fa fa-tachometer",
+          "target": "_self"
         }
       ]
     }

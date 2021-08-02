@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>公寓相关问题</title>
+    <title>留言板</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -42,55 +42,64 @@
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-md12">
                         <div class="layui-card">
-                            <div class="layui-card-header"><i class="fa fa-bus icon"></i>公寓相关问题</div>
-                            <div class="layui-card-body">
-                                <div class="layui-font-20 layui-font-green">
-                                    1. 关于教室申请及使用问题
-                                </div>
-                                <div class="layui-font-16 layui-font-cyan">
-                                    　　教室的借用申请和问题由教务处审批，如发现未在教务处借用课室私自占用的，可像教学楼物业反映。
-                                </div>                               
-                                <div class="layui-font-20 layui-font-green">
-                                    2. 关于教务系统选课问题
-                                </div>
-                                <div class="layui-font-16 layui-font-cyan">
-                                    　　新教务系统的修改和完善是一个工作量复杂、庞大的过程，目前教务处已经针对已有问题进行改善，欢迎同学将所发现的问题进行反应。
-                                </div>
-                                <div class="layui-font-20 layui-font-green">
-                                    3. 关于教务处联系问题
-                                </div>
-                                <div class="layui-font-16 layui-font-cyan">
-                                    <div>教务科：</div>
-                                    <div>85280048 85286194　行政大楼306室</div>
-                                    <div>三角市教材中心：</div>
-                                    <div>66658942</div>
-                                    <div>考务科：</div>
-                                    <div>85282135 行政大楼304室</div>
-                                    <div>教学质量监控科：</div>
-                                    <div>85281631 行政大楼325室</div>
-                                    <div>实践教学科：</div>
-                                    <div>85280051 行政大楼302室</div>
-                                    <div>学籍科：</div>
-                                    <div>85280049 行政大楼305室</div>
-                                    <div>综合科：</div>
-                                    <div>85280047 行政大楼327室</div>
-                                    <div>教学研究与评估中心：</div>
-                                    <div>85280052 行政大楼329室</div>
-                                    <div>教师教学发展中心：</div>
-                                    <div>85285590 行政大楼303室</div>
-                                </div>
-                                <div class="layui-font-20 layui-font-green">
-                                    4. 本科生补办学生证流程
-                                </div>
-                                <div class="layui-font-16 layui-font-cyan">
-                                    　　首先学生需要填写纸质版《华南农业大学补、换学生证申请表》（表格文件可以在华南农业大学官网下载）然后持表格到学院申请办理，申请人需要上交小一寸照片一张（需在照片背后写上个人信息）隔一周后各学院会派人到教务处学籍科统一领取学生证，各学生凭证件到学院领取学生证。（详细流程请查阅华南农业大学教务处官网-华南农业大学本科生补、换发学生证流程）
-                                </div>
-                                <div class="layui-font-20 layui-font-green">
-                                    5. 学生借用教室流程
-                                </div>
-                                <div class="layui-font-16 layui-font-cyan">
-                                    　　首先学生登录教务系统提交借用教室预约申请并打印借用单，然后交予负责老师签字和活动主办单位盖章。第3-16周每周三凭借用单到教务科(行政楼306)办理借用手续，最后将借用教室凭条交到大楼物业管理处。（教室设施包括多媒体设施默认可用，无需额外申请）（详细流程请查阅华南农业大学教务处官网-借用学校公共教室办事流程）
-                                </div>
+                            <div class="layui-card-header layui-font-green layui-bg-gray" ><i class="fa fa-heart icon"></i>留言板</div>
+                            <div class="layui-card-body layui-font-20" >
+                                <form class="layui-form" action="http://127.0.0.1/api/upload-comment" enctype="multipart/form-data" id="comment-form" method="POST">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">姓名</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userName" required="required"  lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input name">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">邮箱</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userEmail" required="required"  lay-verify="required" placeholder="请输入您的邮箱" autocomplete="off" class="layui-input email">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">电话</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userPhoneNumber" required="required"  lay-verify="required" placeholder="请输入您的电话号码" autocomplete="off" class="layui-input phoneNumber">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">学院</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userCollege" required="required"  lay-verify="required" placeholder="请输入您所属的学院" autocomplete="off" class="layui-input college">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">年级</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userGrade" required="required"  lay-verify="required" placeholder="请输入您的年级" autocomplete="off" class="layui-input grade">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">专业</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="userProfession" required="required"  lay-verify="required" placeholder="请输入您所属的专业" autocomplete="off" class="layui-input profession">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label">内容</label>
+                                        <div class="layui-input-block">
+                                            <textarea name="commentText" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">附件</label>
+                                        <div class="layui-input-block">
+                                            <input type="file" name="attachmentFile"  class="attachment">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">立即提交</button>
+                                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -112,28 +121,14 @@
                     </div>
                 </div>
 
-
-                <div class="layui-card">
-                    <div class="layui-card-header"><i class="fa fa-paper-plane-o icon"></i>其他</div>
-                    <div class="layui-card-body layui-text layadmin-text">
-                        <div>
-                            <img class="img-scale" src="../images/a4_bg.jpg"></img>
-                        </div>
-                    </div>
-                    <style type="text/css">
-                        .img-scale{
-                            height: auto;
-                            width: 100%;
-                        }
-                    </style>
-                </div>
-
             </div>
         </div>
     </div>
 </div>
-<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
-<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="../lib/layui-v2.6.3/layui.js" type="application/javascript" charset="UTF-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" type="application/javascript" charset="UTF-8"></script>
+<script src="../lib/jquery-3.6.0/jquery-3.6.0.min.js" type="application/javascript" charset="UTF-8"></script>
+<script src="../js/upload.js" type="application/javascript" charset="UTF-8"></script>
 <script>
     layui.use(['layer', 'miniTab','echarts'], function () {
         var $ = layui.jquery,
@@ -173,11 +168,6 @@
                 }
             });
         });
-
-        // echarts 窗口缩放自适应
-        window.onresize = function(){
-            echartsRecords.resize();
-        }
 
     });
 </script>

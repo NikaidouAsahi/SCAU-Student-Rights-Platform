@@ -99,7 +99,7 @@
         },
         {
           "title": "留言板",
-          "href": "page/liuyanban.html",
+          "href": "page/comment.html",
           "icon": "fa fa-tachometer",
           "target": "_self"
         }

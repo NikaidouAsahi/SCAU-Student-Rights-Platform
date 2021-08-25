@@ -10,10 +10,6 @@
   },
   "menuInfo": [
     {
-      "title": "板块",
-      "icon": "fa fa-address-book",
-      "href": "",
-      "target": "_self",
       "child": [
         {
           "title": "常见问题",
@@ -22,22 +18,22 @@
           "target": "_self",
           "child": [
             {
-              "title": "后勤相关问题",
               "href": "page/a1.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "后勤相关问题"
             },
             {
-              "title": "公寓相关问题",
               "href": "page/a2.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "公寓相关问题"
             },
             {
-              "title": "保卫相关问题",
               "href": "page/a3.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "保卫相关问题"
             },
             {
               "title": "教务相关问题",
@@ -46,16 +42,30 @@
               "target": "_self"
             },
             {
-              "title": "现教相关问题",
-              "href": "page/404.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self"
-            },
-            {
-              "title": "其他问题",
               "href": "page/a5.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "其他问题"
+            }
+          ]
+        },
+        {
+          "title": "相关链接",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "href": "http://m.scau.edu.cn:12048/campusRepair/index.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self",
+              "title": "校内报修"
+            },
+            {
+              "href": "http://estop.scau.edu.cn/portal/letter_sy.jsp",
+              "icon": "fa fa-tachometer",
+              "target": "_self",
+              "title": "校长信箱"
             }
           ]
         },
@@ -66,44 +76,48 @@
           "target": "_self",
           "child": [
             {
-              "title": "第12期校长有约",
               "href": "page/xiaozhangyouyue12.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "第12期校长有约"
             },
             {
-              "title": "第13期校长有约",
               "href": "page/xiaozhangyouyue13.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "第13期校长有约"
             },
             {
-              "title": "第14期校长有约",
               "href": "page/xiaozhangyouyue14.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "第14期校长有约"
             },
             {
-              "title": "第15期校长有约",
               "href": "page/xiaozhangyouyue15.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "第15期校长有约"
             },
             {
-              "title": "第16期校长有约",
               "href": "page/xiaozhangyouyue16.html",
               "icon": "fa fa-tachometer",
-              "target": "_self"
+              "target": "_self",
+              "title": "第16期校长有约"
             }
           ]
         },
         {
-          "title": "留言板",
           "href": "page/comment.html",
           "icon": "fa fa-tachometer",
-          "target": "_self"
+          "target": "_self",
+          "title": "留言板"
         }
-      ]
+      ],
+      "href": "",
+      "icon": "fa fa-address-book",
+      "target": "_self",
+      "title": "板块"
     }
   ]
 }

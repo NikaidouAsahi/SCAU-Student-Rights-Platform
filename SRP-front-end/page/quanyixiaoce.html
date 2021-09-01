@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>保卫相关问题</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <style>
+        .layui-card {border:1px solid #f2f2f2;border-radius:5px;}
+        .icon {margin-right:10px;color:#1aa094;}
+        .icon-cray {color:#ffb800!important;}
+        .icon-blue {color:#1e9fff!important;}
+        .icon-tip {color:#ff5722!important;}
+        .layuimini-qiuck-module {text-align:center;margin-top: 10px}
+        .layuimini-qiuck-module a i {display:inline-block;width:100%;height:60px;line-height:60px;text-align:center;border-radius:2px;font-size:30px;background-color:#F8F8F8;color:#333;transition:all .3s;-webkit-transition:all .3s;}
+        .layuimini-qiuck-module a cite {position:relative;top:2px;display:block;color:#666;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-size:14px;}
+        .welcome-module {width:100%;height:210px;}
+        .panel {background-color:#fff;border:1px solid transparent;border-radius:3px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}
+        .panel-body {padding:10px}
+        .panel-title {margin-top:0;margin-bottom:0;font-size:12px;color:inherit}
+        .label {display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em;margin-top: .3em;}
+        .layui-red {color:red}
+        .main_btn > p {height:40px;}
+        .layui-bg-number {background-color:#F8F8F8;}
+        .layuimini-notice:hover {background:#f6f6f6;}
+        .layuimini-notice {padding:7px 16px;clear:both;font-size:12px !important;cursor:pointer;position:relative;transition:background 0.2s ease-in-out;}
+        .layuimini-notice-title,.layuimini-notice-label {
+            padding-right: 70px !important;text-overflow:ellipsis!important;overflow:hidden!important;white-space:nowrap!important;}
+        .layuimini-notice-title {line-height:28px;font-size:14px;}
+        .layuimini-notice-extra {position:absolute;top:50%;margin-top:-8px;right:16px;display:inline-block;height:16px;color:#999;}
+    </style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md8">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-col-md12">
+                        <div class="layui-card">
+                            <div class="layui-card-header"><i class="fa fa-safari icon"></i>权益小册</div>
+                            <div class="layui-card-body layui-font-20" >
+                                <style type="text/css">
+                                    .tables{
+                                        text-align: center;
+                                    }
+                                </style>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：安全</b></div><br><br>
+                                <div style="font-size: 28px;"class="layui-font-green">保卫处/武装部</div><br>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>单位</th>
+                                        <th>电话</th>
+                                        <th>单位</th>
+                                        <th>电话</th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>华农值班电话(24小时)</td>
+                                        <td>85280110</td>
+                                        <td>保卫处24小时监控中心</td>
+                                        <td>85288149</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>综治办(104-1)</td>
+                                        <td>85280108</td>
+                                        <td>综合科(104-2)</td>
+                                        <td>85280109</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>综合科户籍 办公室</td>
+                                        <td>85288159</td>
+                                        <td>校卫队</td>
+                                        <td>85280105</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>交通消防科</td>
+                                        <td>85281997</td>
+                                        <td>军事科</td>
+                                        <td>85280106</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>五山派出所 (24小时)</td>
+                                        <td>85286072<br>83120845</td>
+                                        <td>火警119<br>匪警110<br>交通事故112<br> 急救120<br></td>
+                                        <td>      </td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>军事理论<br>
+                                            教学研究室</td>
+                                        <td>85281569</td>
+                                        <td>综合治理
+                                            办公室</td>
+                                        <td>85280108</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>家属委员会</td>
+                                        <td>38632619</td>
+                                        <td>校医院24h急救电话</td>
+                                        <td>85280120</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>治安科</td>
+                                        <td>85288205<br>
+                                            85280104</td>
+                                        <td>华农警务室
+                                            陈警官
+                                        </td>
+                                        <td>15218845725
+                                            及635725</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>教四值班室</td>
+                                        <td>无</td>
+                                        <td>教五值班室</td>
+                                        <td>38694365</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>教六值班室</td>
+                                        <td>无</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                                <br><br><br>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：医疗</b></div><br><br>
+                                <div style="font-size: 28px;"class="layui-font-green">校医院</div><br>
+                                <div class="layui-font-20"><b>门诊挂号、开诊时间</b></div><br><br>
+                                <div>（1）挂号时间<br>
+                                    周一至周五：上午7：50—12：00   下午2：20—5：30<br>
+                                    周六、周日：上午7：50—11：30   下午2：50—5：30<br><br>
+                                    （2）门诊、急诊开诊时间<br>
+
+                                    <b>门诊：</b><br>
+
+                                    周一至周五：上午8：00—12：00    下午2：30—5：30<br>
+
+                                    周六、周日及节假日：上午8：00—11：30   下午3：00—5：30<br>
+
+                                    <b>急诊：</b><br>
+
+                                    每天24小时应诊<br>
+
+                                    注意：需做B超检查者，请逢星期二、五上午前来。<br><br><br>
+
+                                    <b>联系电话</b><br><br>
+
+                                    导诊电话：020-85280348<br>
+
+                                    急诊电话：020-85280120<br>
+
+                                    家庭医生签约电话：85287236<br>
+
+                                    预防保健科电话：85280347<br>
+
+                                    医保办公室电话：85288086<br>
+
+                                    公费医疗办公室电话：85283461<br>
+
+                                    计生办电话：85280346<br>
+
+                                    儿童计免门诊咨询电话：85280347<br><br>
+
+                                    <b>门诊开诊科室</b><br>
+
+                                    （1）周一至周五开诊的科室：<br>
+
+                                    内科、全科、外科、妇科、眼科、耳鼻咽喉科、中医科（普通门诊）、理疗科、预防保健科、检验科、放射科、B超（B超周一至周五每天上午开诊，下午不开诊）。<br>
+
+                                    （2）周六、周日、节假日开诊的科室：<br>
+
+                                    内科、全科。<br>
+
+                                    （3）针灸科开诊时间：<br>
+
+                                    逢周一、周三全天（寒暑假、周六日、节假日不开诊）。<br>
+
+                                    （4）中药科专家门诊开诊时间：<br>
+
+                                    周一到周四全天。<br><br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">校外医院就诊</div><br>
+
+                                    离学校较近的校外医院有中山大学附属第三医院。<br>
+
+                                    地址：广州市天河区石牌岗顶（天河路600号），紧邻地铁三号线岗顶站D出口。</div><br><br><br>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：权益</b></div><br><br>
+                                <div>
+                                    <div style="font-size: 28px;"class="layui-font-green">校学生会权益与调研部</div><br>
+
+                                    联系方式:<br>
+
+                                    值班地点：新学生活动中心 210 室<br>
+
+                                    值班时间：星期一到星期五 上午10：00～11：40 ；下午14：30～17：30 <br>
+                                    意见征集：新浪微博： @华南农业大学学生会权益与调研部<br>
+
+                                    微信公众号：华南农业大学学生会<br>
+
+                                    电子邮箱：scauquandiao@163.com<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">学生社区自我管理委员会</div><br>
+
+                                    各区负责人联系方式<br>
+
+                                    启林北区：甄锦眉15819757712<br>
+
+                                    启林南区：范舒婷13316144962<br>
+
+                                    华山区：刘兆肃15521077228<br>
+
+                                    泰山区：欧阳思颖15521175894<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">教学信息委员会</div><br>
+
+                                    值班时间：周一至周五，正常上课时间<br>
+
+                                    （早上8：30-9：40，10：20-11：30；下午14: 30-15：40 ；16：20-17：30）<br>
+
+                                    办公电话：85281631<br><br>
+
+                                    办公地点：华南农业大学行政楼325房<br>
+
+                                    电子邮箱：dudao@scau.edu.cn<br>
+
+                                    主页：<br><div style="word-wrap:break-word;white-space: normal;">http://web.scau.edu.cn/jwc/feedback/index.asp</div><br>
+
+                                    微博：http://weibo.com/xinxiwork?s=6cm7D0<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">膳食管理委员会</div><br>
+
+                                    饮食服务中心电话：85280122<br>
+
+                                    饮食中心冯碧颜老师：13570256296<br>
+
+                                    邮箱：scaushanguan@qq.com<br>
+
+                                    博客：<div style="word-wrap:break-word;white-space: normal;">http://scaushanguanhui.blog.163.com/</div><br>
+
+                                    办公地址：华山宿舍区七栋楼下膳食管理委员会办公室<br>
+
+                                    值班时间：星期五12-13点<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">宿舍管理委员会</div><br>
+
+
+                                    办公地点：<br>
+
+                                    （1）<br>
+
+                                    （2）华山2栋109室<br>
+
+                                    （3）跃进北区56栋101室<br>
+
+                                    （4）跃进南区37栋220室<br>
+
+                                    值班时间：周一至周五：11:00-12:30；17:00-18:30<br>
+
+                                    博客：<div style="word-wrap:break-word;white-space: normal;">http://scaushanguanhui.blog.163.com/</div><br><br>
+
+                                    各宿舍区办公室电话<br>
+
+                                    （1）华山区38632751<br>
+
+                                    （2）泰山区38695619<br>
+
+                                    （3）跃进南38694315<br>
+
+                                    （4）跃进北38605625<br>
+
+                                    另:可以直接在企业公众号报修<br>
+
+                                    校长信箱：xz@scau.edu.cn<br>
+
+                                    书记信箱：dwbgs@scau.edu.cn</div><br><br><br>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：维权</b></div><br><br>
+                                <div>
+                                    <div style="font-size: 28px;"class="layui-font-green">（一）热水投诉</div><br>
+                                    单位：广州精准节能科技有限公司<br>
+
+                                    联系电话：28688878（周一到周五9:30-17:30）<br>
+
+                                    网址：http://www.jingzhun-gz.com<br>
+
+                                    热水服务点：<br>
+
+                                    华山区：华山学生社区服务中心<br>
+
+                                    泰山区：泰山学生社区服务中心<br>
+
+                                    启林南区：启林南学生社区服务中心<br>
+
+                                    启林北区：启林北学生社区服务中心<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">（（二）饭堂投诉</div><br>
+
+                                    单位：华南农业大学饮食服务中心<br>
+
+                                    联系电话：85280122<br>
+                                    邮箱：scaushanguan@qq.com<br>
+
+                                    办公地址：华山宿舍区七栋楼下膳食管理委员会办公室<br>
+
+                                    值班时间：星期五12-13点<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">（三）教学投诉</div><br>
+
+                                    单位：教学质量监控科<br>
+
+                                    联系电话：85281631<br>
+
+                                    办公地点：行政楼325室<br><br>
+
+
+
+                                    <div style="font-size: 28px;"class="layui-font-green">（四）饮用水投诉</div><br>
+
+                                    单位：奇康饮品有限公司<br>
+
+                                    联系电话：85280808<br>
+
+                                    办公时间：上午8：00—12：00   14：30—17：30
+                                </div><br><br><br>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：学生</b></div><br><br>
+                                <style type="text/css">
+                                    .tables{
+                                        text-align: center;
+                                    }
+                                </style>
+                                <div style="font-size: 28px;"class="layui-font-green">学生工作部（处）</div><br>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>科室/中心</th>
+                                        <th>办公地点</th>
+                                        <th>联系电话</th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>综合科</td>
+                                        <td>行政楼204</td>
+                                        <td>85280082</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>思想政治教育科</td>
+                                        <td>行政楼226</td>
+                                        <td>85280084</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>助学管理中心</td>
+                                        <td>行政楼227</td>
+                                        <td>85280083</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>教一西侧一楼</td>
+                                        <td>38634800</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>心理健康辅导中心</td>
+                                        <td>华山学活三楼</td>
+                                        <td>85280085</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>学生公寓管理服务中心</td>
+                                        <td>华山19栋</td>
+                                        <td>85280022</td>
+                                    </tr></table><br><br>
+                                <div style="font-size: 28px;"class="layui-font-green">校园卡管理核算中心</div><br>
+                                <b>地点：华南农业大学行政大楼东侧门 （行政大楼一楼117室）<br>
+                                    联系电话：85285367   24小时语音电话：85281589</b><br><br><br>
+                                <div class="layui-font-green" style="font-size: 36px;text-align: center"><b>权益小贴士：学习</b></div><br><br>
+                                <div style="font-size: 28px;"class="layui-font-green">图书馆</div><br>
+                                <div><b>图书馆总馆</b></div><br><br>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>库（室）名称</th>
+                                        <th>周一至周五</th>
+                                        <th>周 六</th>
+                                        <th>周日</th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>咨询处（主楼大厅）</td>
+                                        <td>8:00-12:00<br>14:30-17:30</td>
+                                        <td>不开放</td>
+                                        <td>不开放</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>密集书库（主楼东负一层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>学位论文阅览室（信息楼二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>科技查新室（信息楼二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>文检教研室（信息楼二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>信息咨询室（信息楼三层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>总服务台（主楼大厅）</td>
+                                        <td>8:00—22:00</td>
+                                        <td>8:00—18:00</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>中文社科A、B库（主楼东一层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>小说人物传记库（主东二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>外文、艺术书库（主楼东二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>中文自科A、B库（主楼东三层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>样本书库（主楼东负一层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>外文过刊阅览室（主楼西二层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>现刊/报纸阅览室（主楼西三层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>中文过刊阅览室（主楼西四层）</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table><br><br>
+                                <div><b>图书馆分馆</b></div><br>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>周一至周六</th>
+                                        <th>周日</th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>8:00—22:00</td>
+                                        <td>8:00—18:00</td>
+                                    </tr></table><br><br>
+                                <div><b>联系方式</b></div><br>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>地点</th>
+                                        <th>库（室）名称</th>
+                                        <th>电话</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>图书馆主楼大厅</td>
+                                        <td>图书借还及办证处</td>
+                                        <td>020-85280815</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>图 书 馆 主 楼 东</td>
+                                        <td>一层</td>
+                                        <td>中文社科书库</td>
+                                        <td>020-85281149</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td>二层</td>
+                                        <td>小说、人物传记库</td>
+                                        <td>020-85280276</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td>外文、艺术书库</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td>新书展示厅</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td>三层</td>
+                                        <td>中文自科书库</td>
+                                        <td>020-85280142</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td>负一层</td>
+                                        <td>密集书库</td>
+                                        <td>020-85280931</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td>样本书库</td>
+                                        <td>020-85280931</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>图 书 馆 主 楼 西</td>
+                                        <td>一层</td>
+                                        <td>办公室</td>
+                                        <td>020-85280144</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>特色资源建设部</td>
+                                        <td>020-85281254</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>资源建设部（采编）</td>
+                                        <td>020-85288016</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>二层</td>
+                                        <td>外文过刊阅览室</td>
+                                        <td>020-85281247</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>古籍室</td>
+                                        <td>020-85281254</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>系统部办公室</td>
+                                        <td>020-85281842</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>阅读推广部办公室</td>
+                                        <td>020-85283195</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>三层</td>
+                                        <td>现刊/报纸阅览室</td>
+                                        <td>020-85280703</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>四层</td>
+                                        <td>中文过刊阅览室</td>
+                                        <td>020-85280141</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td></td>
+                                        <td>流通阅览部办公室</td>
+                                        <td>020-85281242</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>五层</td>
+                                        <td>华农文库</td>
+                                        <td>020-85280141</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>图 书 馆 信 息 楼</td>
+                                        <td>一楼</td>
+                                        <td>信息检索咨询室</td>
+                                        <td>020-85285789</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td>负一楼</td>
+                                        <td>科技信息研究室</td>
+                                        <td>020-85283201</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td>专利信息服务</td>
+                                        <td>020-85288065</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td></td>
+                                        <td></td>
+                                        <td>科技查新室</td>
+                                        <td>020-85281054</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>教4三楼西南端</td>
+                                        <td>图书借还室</td>
+                                        <td>020-38255776</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>教4一楼东南端</td>
+                                        <td>期刊阅览室</td>
+                                        <td>020-38267470</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>教5 A楼7层</td>
+                                        <td>图书借还室</td>
+                                        <td>020-38694262</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td></td>
+                                        <td>期刊阅览室</td>
+                                        <td>020-38694263</td>
+                                        <td></td>
+                                    </tr>
+
+                                </table><br><br>
+                                <div style="font-size: 28px;"class="layui-font-green">教务处（行政大楼3楼）</div><br>
+                                <div><b>下属部门</b></div>
+                                <table class="tables" border="1" style="display: inline-table;width: 100%;max-width: 100%;height: auto;">
+                                    <tr bgcolor="#6495ed">
+                                        <th>科室中心</th>
+                                        <th>电话</th>
+                                        <th>办公地点</th>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>教务科</td>
+                                        <td>85280048<br>85286194</td>
+                                        <td>行政大楼306室</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>三角市教材中心</td>
+                                        <td>66658942</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>考务科</td>
+                                        <td>85282135</td>
+                                        <td>行政大楼304室</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>教学质量监控科</td>
+                                        <td>85281631</td>
+                                        <td>行政大楼325室</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>实践教学科</td>
+                                        <td>85280051</td>
+                                        <td>行政大楼302室</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>学籍科</td>
+                                        <td>85280049</td>
+                                        <td>行政大楼305室</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>综合科</td>
+                                        <td>85280047</td>
+                                        <td>行政大楼327室</td>
+                                    </tr>
+                                    <tr bgcolor="#add8e6">
+                                        <td>教学研究与评估中心</td>
+                                        <td>85280052</td>
+                                        <td>行政大楼329室</td>
+                                    </tr>
+                                    <tr bgcolor="#87cefa">
+                                        <td>教师教学发展中心</td>
+                                        <td>85285590</td>
+                                        <td>行政大楼303室</td>
+                                    </tr>
+
+                                </table>
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script>
+    layui.use(['layer', 'miniTab','echarts'], function () {
+        var $ = layui.jquery,
+            layer = layui.layer,
+            miniTab = layui.miniTab,
+            echarts = layui.echarts;
+
+        miniTab.listen();
+
+        /**
+         * 查看公告信息
+         **/
+        $('body').on('click', '.layuimini-notice', function () {
+            var title = $(this).children('.layuimini-notice-title').text(),
+                noticeTime = $(this).children('.layuimini-notice-extra').text(),
+                content = $(this).children('.layuimini-notice-content').html();
+            var html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #2f4056;color: #ffffff">\n' +
+                '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
+                '<div style="font-size: 12px">' + content + '</div>\n' +
+                '</div>\n';
+            parent.layer.open({
+                type: 1,
+                title: '系统公告'+'<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">'+noticeTime+'</span>',
+                area: '300px;',
+                shade: 0.8,
+                id: 'layuimini-notice',
+                btn: ['查看', '取消'],
+                btnAlign: 'c',
+                moveType: 1,
+                content:html,
+                success: function (layero) {
+                    var btn = layero.find('.layui-layer-btn');
+                    btn.find('.layui-layer-btn0').attr({
+                        href: 'https://gitee.com/zhongshaofa/layuimini',
+                        target: '_blank'
+                    });
+                }
+            });
+        });
+
+        // echarts 窗口缩放自适应
+        window.onresize = function(){
+            echartsRecords.resize();
+        }
+
+    });
+</script>
+</body>
+</html>

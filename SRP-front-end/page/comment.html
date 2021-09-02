@@ -44,71 +44,67 @@
                         <div class="layui-card">
                             <div class="layui-card-header layui-font-green layui-bg-gray" ><i class="fa fa-heart icon"></i>留言板</div>
                             <div class="layui-card-body layui-font-20" >
-                                <form class="layui-form" action="/api/upload-comment" enctype="multipart/form-data" id="comment-form" method="POST">
+                                <div class="layui-form" method="" id="comment-form">
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">姓名</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userName" required="required"  lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input name">
+                                            <input type="text" id="userName" required="required"  lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input name">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">邮箱</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userEmail" required="required"  lay-verify="required" placeholder="请输入您的邮箱" autocomplete="off" class="layui-input email">
+                                            <input type="text" id="userEmail" required="required"  lay-verify="required" placeholder="请输入您的邮箱" autocomplete="off" class="layui-input email">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">电话</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userPhoneNumber" required="required"  lay-verify="required" placeholder="请输入您的电话号码" autocomplete="off" class="layui-input phoneNumber">
+                                            <input type="text" id="userPhoneNumber" required="required"  lay-verify="required" placeholder="请输入您的电话号码" autocomplete="off" class="layui-input phoneNumber">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">学院</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userCollege" required="required"  lay-verify="required" placeholder="请输入您所属的学院" autocomplete="off" class="layui-input college">
+                                            <input type="text" id="userCollege" required="required"  lay-verify="required" placeholder="请输入您所属的学院" autocomplete="off" class="layui-input college">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">年级</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userGrade" required="required"  lay-verify="required" placeholder="请输入您的年级" autocomplete="off" class="layui-input grade">
+                                            <input type="text" id="userGrade" required="required"  lay-verify="required" placeholder="请输入您的年级" autocomplete="off" class="layui-input grade">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">专业</label>
                                         <div class="layui-input-block">
-                                            <input type="text" name="userProfession" required="required"  lay-verify="required" placeholder="请输入您所属的专业" autocomplete="off" class="layui-input profession">
+                                            <input type="text" id="userProfession" required="required"  lay-verify="required" placeholder="请输入您所属的专业" autocomplete="off" class="layui-input profession">
                                         </div>
                                     </div>
                                     <div class="layui-form-item layui-form-text">
                                         <label class="layui-form-label">内容</label>
                                         <div class="layui-input-block">
-                                            <textarea name="commentText" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
+                                            <textarea id="commentText" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">附件</label>
                                         <div class="layui-input-block">
-                                            <input type="file" name="attachmentFile"  class="attachment">
+                                            <button class="layui-bg-orange layui-btn" id="select-file">选择文件</button>
+                                            <input type="file" id="attachment" hidden="hidden">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <div class="layui-input-block">
-                                            <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">立即提交</button>
+                                            <button class="layui-btn" id="submit">立即提交</button>
                                             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="layui-col-md4">
-
-
             </div>
         </div>
     </div>
@@ -116,48 +112,6 @@
 <script src="../lib/layui-v2.6.3/layui.js" type="application/javascript" charset="UTF-8"></script>
 <script src="../js/lay-config.js?v=1.0.4" type="application/javascript" charset="UTF-8"></script>
 <script src="../lib/jquery-3.6.0/jquery-3.6.0.min.js" type="application/javascript" charset="UTF-8"></script>
-<script src="../js/upload.js" type="application/javascript" charset="UTF-8"></script>
-<script>
-    layui.use(['layer', 'miniTab','echarts'], function () {
-        var $ = layui.jquery,
-            layer = layui.layer,
-            miniTab = layui.miniTab,
-            echarts = layui.echarts;
-
-        miniTab.listen();
-
-        /**
-         * 查看公告信息
-         **/
-        $('body').on('click', '.layuimini-notice', function () {
-            var title = $(this).children('.layuimini-notice-title').text(),
-                noticeTime = $(this).children('.layuimini-notice-extra').text(),
-                content = $(this).children('.layuimini-notice-content').html();
-            var html = '<div style="padding:15px 20px; text-align:justify; line-height: 22px;border-bottom:1px solid #e2e2e2;background-color: #2f4056;color: #ffffff">\n' +
-                '<div style="text-align: center;margin-bottom: 20px;font-weight: bold;border-bottom:1px solid #718fb5;padding-bottom: 5px"><h4 class="text-danger">' + title + '</h4></div>\n' +
-                '<div style="font-size: 12px">' + content + '</div>\n' +
-                '</div>\n';
-            parent.layer.open({
-                type: 1,
-                title: '系统公告'+'<span style="float: right;right: 1px;font-size: 12px;color: #b1b3b9;margin-top: 1px">'+noticeTime+'</span>',
-                area: '300px;',
-                shade: 0.8,
-                id: 'layuimini-notice',
-                btn: ['查看', '取消'],
-                btnAlign: 'c',
-                moveType: 1,
-                content:html,
-                success: function (layero) {
-                    var btn = layero.find('.layui-layer-btn');
-                    btn.find('.layui-layer-btn0').attr({
-                        href: 'https://gitee.com/zhongshaofa/layuimini',
-                        target: '_blank'
-                    });
-                }
-            });
-        });
-
-    });
-</script>
+<script src="../js/comment.js" type="application/javascript" charset="UTF-8"></script>
 </body>
 </html>

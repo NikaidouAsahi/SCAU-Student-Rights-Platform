@@ -1,17 +1,16 @@
 package com.vincent.studentrightsplatform;
 
+import com.vincent.studentrightsplatform.ParamModel.CommentParam;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.util.unit.DataSize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.MultipartConfigElement;
-import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,6 +19,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api")
 public class UploadController {
+
+    @Autowired
+    private CommentRepository commentRepository;
+
+    public UploadController() {
+    }
     @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
@@ -29,48 +34,61 @@ public class UploadController {
         factory.setMaxRequestSize(DataSize.parse("102MB"));
         return factory.createMultipartConfig();
     }
-
-    @Autowired
-    private CommentRepository commentRepository;
-
     @PostMapping("/upload-comment")
-    public String form(HttpServletRequest req,
-                       @RequestParam(name = "attachmentFile", required = false) MultipartFile attachmentFile, @RequestParam("commentText") String commentText,
-                       @RequestParam("userName") String userName, @RequestParam("userEmail") String userEmail,
-                       @RequestParam("userCollege") String userCollege, @RequestParam("userGrade") String userGrade,
-                       @RequestParam("userProfession") String userProfession, @RequestParam("userPhoneNumber") String userPhoneNumber) {
+    public String Comment(@Valid @RequestBody CommentParam param) {
+        String uuid = UUID.randomUUID().toString();
+        Comment comment = new Comment();
+        comment.setCommentText(param.getCommentText());
+        comment.setUserCollege(param.getUserCollege());
+        comment.setUserEmail(param.getUserEmail());
+        comment.setUserGrade(param.getUserGrade());
+        comment.setUserName(param.getUserName());
+        comment.setUserProfession(param.getUserProfession());
+        comment.setUserPhoneNumber(param.getUserPhoneNumber());
+        comment.setUserId(uuid);
         try {
-            String uuid = UUID.randomUUID().toString();
-            Comment newComment = new Comment();
-            newComment.setCommentText(commentText);
-            newComment.setUserCollege(userCollege);
-            newComment.setUserEmail(userEmail);
-            newComment.setUserGrade(userGrade);
-            newComment.setUserName(userName);
-            newComment.setUserProfession(userProfession);
-            newComment.setUserPhoneNumber(userPhoneNumber);
-            newComment.setUserId(uuid);
-            if(attachmentFile != null && !attachmentFile.isEmpty()) {
-                String fileName = System.currentTimeMillis() + attachmentFile.getOriginalFilename();
-                byte[] b = attachmentFile.getBytes();
-                String destFileName = req.getServletContext().getRealPath("") + "uploaded" + File.separator + fileName;
-                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 附件文件路径: " + destFileName + "\n");
-                File outputFile = new File(destFileName);
-                outputFile.getParentFile().mkdirs();
+            if(param.getAttachmentFile().length() != 0) {
+                String fileExtension = FilenameUtils.getExtension(param.getFileName());
+                String fileName = uuid + '.' + fileExtension;
+                byte[] b = Utilities.base64Decrypt(param.getAttachmentFile());
+                String filePath = System.getProperty("user.dir") + File.separator + "upload" + File.separator + "comment" + File.separator + fileName;
+                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 附件文件路径: " + filePath + "\n");
+                File outputFile = new File(filePath);
+                if(outputFile.getParentFile().mkdirs()) {
+                    System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "创建目录成功\n");
+                }
+                else {
+                    System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "目录已存在\n");
+                }
                 FileOutputStream fos = new FileOutputStream(outputFile);
                 fos.write(b,0,b.length);
                 fos.close();
-                newComment.setAttachmentFileName(destFileName);
+                comment.setAttachmentFileName(filePath);
             }
             else {
                 System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 本次上传无附件");
-                newComment.setAttachmentFileName("NULL");
+                comment.setAttachmentFileName("NULL");
             }
-            commentRepository.save(newComment);
+            commentRepository.save(comment);
             return "上传成功";
         } catch (IOException e) {
             e.printStackTrace();
             return "500";
         }
+    }
+
+    @PostMapping("/upload-proposal")
+    public String Proposal(@RequestParam(name = "proposalTitle") String proposalTitle,
+                           @RequestParam(name = "userName") String userName,
+                           @RequestParam(name = "userCollegeAndProfession") String userCollegeAndProfession,
+                           @RequestParam(name = "userId") String userId,
+                           @RequestParam(name = "userContact") String userContact,
+                           @RequestParam(name = "userEmail") String userEmail,
+                           @RequestParam(name = "proposalContent") String proposalContent,
+                           @RequestParam(name = "photo") MultipartFile photo,
+                           @RequestParam(name = "document") MultipartFile document
+                           )
+    {
+        return "hello";
     }
 }

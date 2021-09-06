@@ -44,16 +44,19 @@ $(document).ready(
                 uploadObj.userProfession = $("#userProfession").val();
                 uploadObj.userPhoneNumber = $("#userPhoneNumber").val();
                 uploadObj.attachmentFile = file_in_base64;
+                file_in_base64 = "";
                 uploadObj.fileName = fileName;
                 if(uploadObj.commentText.length && uploadObj.userName.length && uploadObj.userEmail.length && uploadObj.userCollege.length && uploadObj.userGrade.length && uploadObj.userProfession.length && uploadObj.userPhoneNumber) {
                     //用户已经填完了所有信息
                     console.log("开始上传");
                     let uploadJson = JSON.stringify(uploadObj);
+                    for(let key in uploadObj) {
+                        delete uploadObj[key];
+                    } // 回收内存
                     upload(uploadJson);
-                    file_in_base64 = "";
                 }
                 else {
-                    alert("请补全其他必填选项");
+                    console.log("用户未填写所需信息");
                 }
             }
         );

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.vincent</groupId>
     <artifactId>Student-Rights-Platform</artifactId>
-    <version>21w35a-SNAPSHOT</version>
+    <version>21w36c-SNAPSHOT</version>
     <name>Student-Rights-Platform</name>
     <description>SCAU学生权益平台</description>
     <properties>

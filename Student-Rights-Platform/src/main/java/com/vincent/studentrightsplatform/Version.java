@@ -12,7 +12,7 @@ public class Version {
     @Bean
     public BuildProperties buildProperties() {
         Properties properties = new Properties();
-        properties.put("version", "21w35a-SNAPSHOT");
+        properties.put("version", "21w36c-SNAPSHOT");
         return new BuildProperties(properties);
     }
 

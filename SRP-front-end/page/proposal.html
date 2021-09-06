@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>留言板</title>
+    <title>提案征集</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -42,56 +42,63 @@
                 <div class="layui-row layui-col-space15">
                     <div class="layui-col-md12">
                         <div class="layui-card">
-                            <div class="layui-card-header layui-font-green layui-bg-gray" ><i class="fa fa-heart icon"></i>留言板</div>
+                            <div class="layui-card-header layui-font-green layui-bg-gray" ><i class="fa fa-heart icon"></i>提案征集</div>
                             <div class="layui-card-body layui-font-20" >
                                 <div class="layui-form" method="" id="comment-form">
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">姓名</label>
+                                        <label class="layui-form-label">提案标题</label>
                                         <div class="layui-input-block">
-                                            <input type="text" id="userName" required="required"  lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input name">
+                                            <input type="text" id="proposalTitle" required="required"  lay-verify="required" placeholder="请输入您的姓名" autocomplete="off" class="layui-input name">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">邮箱</label>
+                                        <label class="layui-form-label">提议人</label>
                                         <div class="layui-input-block">
-                                            <input type="text" id="userEmail" required="required"  lay-verify="required" placeholder="请输入您的邮箱" autocomplete="off" class="layui-input email">
+                                            <input type="text" id="userName" required="required"  lay-verify="required" placeholder="请输入您的邮箱" autocomplete="off" class="layui-input email">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">电话</label>
+                                        <label class="layui-form-label">学院专业</label>
                                         <div class="layui-input-block">
-                                            <input type="text" id="userPhoneNumber" required="required"  lay-verify="required" placeholder="请输入您的电话号码" autocomplete="off" class="layui-input phoneNumber">
+                                            <input type="text" id="userCollegeAndProfession" required="required"  lay-verify="required" placeholder="请输入您的电话号码" autocomplete="off" class="layui-input phoneNumber">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">学院</label>
+                                        <label class="layui-form-label">学号</label>
                                         <div class="layui-input-block">
-                                            <input type="text" id="userCollege" required="required"  lay-verify="required" placeholder="请输入您所属的学院" autocomplete="off" class="layui-input college">
+                                            <input type="text" id="userId" required="required"  lay-verify="required" placeholder="请输入您所属的学院" autocomplete="off" class="layui-input college">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">年级</label>
+                                        <label class="layui-form-label">联系方式</label>
                                         <div class="layui-input-block">
                                             <input type="text" id="userGrade" required="required"  lay-verify="required" placeholder="请输入您的年级" autocomplete="off" class="layui-input grade">
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">专业</label>
+                                        <label class="layui-form-label">提案内容</label>
                                         <div class="layui-input-block">
-                                            <input type="text" id="userProfession" required="required"  lay-verify="required" placeholder="请输入您所属的专业" autocomplete="off" class="layui-input profession">
-                                        </div>
-                                    </div>
-                                    <div class="layui-form-item layui-form-text">
-                                        <label class="layui-form-label">内容</label>
-                                        <div class="layui-input-block">
-                                            <textarea id="commentText" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
+                                            <textarea id="proposalContent" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
-                                        <label class="layui-form-label">附件</label>
+                                        <label class="layui-form-label">图片上传</label>
                                         <div class="layui-input-block">
-                                            <button class="layui-bg-orange layui-btn" id="select-file">选择文件</button>
-                                            <input type="file" id="attachment" hidden="hidden">
+                                            <button class="layui-bg-orange layui-btn" id="select-photo">点击上传</button>
+                                            <input type="file" id="photo" hidden="hidden">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">文档上传</label>
+                                        <div class="layui-input-block">
+                                            <button class="layui-bg-orange layui-btn" id="select-document">点击上传</button>
+                                            <input type="file" id="document" hidden="hidden">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item layui-form-text">
+                                        <label class="layui-form-label">解决方案</label>
+                                        <div class="layui-input-block">
+                                            <textarea id="solution" required="required" placeholder="请输入内容" class="layui-textarea commentText"></textarea>
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
@@ -112,6 +119,6 @@
 <script src="../lib/layui-v2.6.3/layui.js" type="application/javascript" charset="UTF-8"></script>
 <script src="../js/lay-config.js?v=1.0.4" type="application/javascript" charset="UTF-8"></script>
 <script src="../lib/jquery-3.6.0/jquery-3.6.0.min.js" type="application/javascript" charset="UTF-8"></script>
-<script src="../js/comment.js" type="application/javascript" charset="UTF-8"></script>
+<script src="../js/proposal.js" type="application/javascript" charset="UTF-8"></script>
 </body>
 </html>

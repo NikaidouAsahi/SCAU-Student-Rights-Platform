@@ -1,13 +1,17 @@
 package com.vincent.studentrightsplatform;
 
 import com.vincent.studentrightsplatform.ParamModel.CommentParam;
+import com.vincent.studentrightsplatform.ParamModel.ProposalParam;
+import com.vincent.studentrightsplatform.RepositoryInterface.CommentRepository;
+import com.vincent.studentrightsplatform.RepositoryInterface.ProposalRepository;
+import com.vincent.studentrightsplatform.entity.Comment;
+import com.vincent.studentrightsplatform.entity.Proposal;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.util.unit.DataSize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.MultipartConfigElement;
 import javax.validation.Valid;
@@ -22,6 +26,8 @@ public class UploadController {
 
     @Autowired
     private CommentRepository commentRepository;
+    @Autowired
+    private ProposalRepository proposalRepository;
 
     public UploadController() {
     }
@@ -29,9 +35,9 @@ public class UploadController {
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //  单个数据大小
-        factory.setMaxFileSize(DataSize.parse("100MB"));
+        factory.setMaxFileSize(DataSize.parse("200MB"));
         /// 总上传数据大小
-        factory.setMaxRequestSize(DataSize.parse("102MB"));
+        factory.setMaxRequestSize(DataSize.parse("202MB"));
         return factory.createMultipartConfig();
     }
     @PostMapping("/upload-comment")
@@ -47,22 +53,13 @@ public class UploadController {
         comment.setUserPhoneNumber(param.getUserPhoneNumber());
         comment.setUserId(uuid);
         try {
-            if(param.getAttachmentFile().length() != 0) {
+            if(param.getFileName() != null && param.getFileName().length() != 0) {
                 String fileExtension = FilenameUtils.getExtension(param.getFileName());
                 String fileName = uuid + '.' + fileExtension;
                 byte[] b = Utilities.base64Decrypt(param.getAttachmentFile());
                 String filePath = System.getProperty("user.dir") + File.separator + "upload" + File.separator + "comment" + File.separator + fileName;
                 System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 附件文件路径: " + filePath + "\n");
-                File outputFile = new File(filePath);
-                if(outputFile.getParentFile().mkdirs()) {
-                    System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "创建目录成功\n");
-                }
-                else {
-                    System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "目录已存在\n");
-                }
-                FileOutputStream fos = new FileOutputStream(outputFile);
-                fos.write(b,0,b.length);
-                fos.close();
+                SaveFile(b, filePath);
                 comment.setAttachmentFileName(filePath);
             }
             else {
@@ -78,17 +75,61 @@ public class UploadController {
     }
 
     @PostMapping("/upload-proposal")
-    public String Proposal(@RequestParam(name = "proposalTitle") String proposalTitle,
-                           @RequestParam(name = "userName") String userName,
-                           @RequestParam(name = "userCollegeAndProfession") String userCollegeAndProfession,
-                           @RequestParam(name = "userId") String userId,
-                           @RequestParam(name = "userContact") String userContact,
-                           @RequestParam(name = "userEmail") String userEmail,
-                           @RequestParam(name = "proposalContent") String proposalContent,
-                           @RequestParam(name = "photo") MultipartFile photo,
-                           @RequestParam(name = "document") MultipartFile document
-                           )
-    {
-        return "hello";
+    public String Proposal(@Valid @RequestBody ProposalParam param) {
+        String uuid = UUID.randomUUID().toString();
+        Proposal proposal = new Proposal();
+        proposal.setProposalContent(param.getProposalContent());
+        proposal.setProposalTitle(param.getProposalTitle());
+        proposal.setUserEmail(param.getUserEmail());
+        proposal.setSolution(param.getSolution());
+        proposal.setUserName(param.getUserName());
+        proposal.setUserContact(param.getUserContact());
+        proposal.setUserCollegeAndProfession(param.getUserCollegeAndProfession());
+        try {
+            if(param.getPhotoName() != null && param.getPhotoName().length() != 0) {
+                String photoExtension = FilenameUtils.getExtension(param.getPhotoName());
+                String fileName = uuid + '.' + photoExtension;
+                byte[] b = Utilities.base64Decrypt(param.getPhoto());
+                String photoPath = System.getProperty("user.dir") + File.separator + "upload" + File.separator + "proposal" + File.separator + uuid + File.separator + "photo" + File.separator + fileName;
+                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 附件图片路径: " + photoPath + "\n");
+                SaveFile(b, photoPath);
+                proposal.setPhotoPath(photoPath);
+            }
+            else {
+                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 本次上传无图片");
+                proposal.setPhotoPath("NULL");
+            }
+            if(param.getDocumentName() != null && param.getDocumentName().length() != 0) {
+                String documentExtension = FilenameUtils.getExtension(param.getDocumentName());
+                String fileName = uuid + '.' + documentExtension;
+                byte[] b = Utilities.base64Decrypt(param.getDocument());
+                String documentPath = System.getProperty("user.dir") + File.separator + "upload" + File.separator + "proposal" + File.separator + uuid + File.separator + "document" + File.separator + fileName;
+                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 附件文档路径: " + documentPath + "\n");
+                SaveFile(b, documentPath);
+                proposal.setDocumentPath(documentPath);
+            }
+            else {
+                System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + " 本次上传无文档");
+                proposal.setPhotoPath("NULL");
+            }
+            proposalRepository.save(proposal);
+            return "上传成功";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "500";
+        }
+    }
+
+    private void SaveFile(byte[] b, String filePath) throws IOException {
+        File outputFile = new File(filePath);
+        if(outputFile.getParentFile().mkdirs()) {
+            System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "创建目录成功\n");
+        }
+        else {
+            System.out.println(Utilities.getDateAndTime(System.currentTimeMillis()) + "目录已存在\n");
+        }
+        FileOutputStream fos = new FileOutputStream(outputFile);
+        fos.write(b,0,b.length);
+        fos.close();
     }
 }

@@ -19,31 +19,31 @@
           "child": [
             {
               "href": "page/a1.html",
-              "icon": "fa fa-tachometer",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
               "title": "后勤相关问题"
             },
             {
               "href": "page/a2.html",
-              "icon": "fa fa-tachometer",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
               "title": "公寓相关问题"
             },
             {
               "href": "page/a3.html",
-              "icon": "fa fa-tachometer",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
               "title": "保卫相关问题"
             },
             {
               "title": "教务相关问题",
               "href": "page/a4.html",
-              "icon": "fa fa-tachometer",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self"
             },
             {
               "href": "page/a5.html",
-              "icon": "fa fa-tachometer",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
               "title": "其他问题"
             }
@@ -57,13 +57,13 @@
           "child": [
             {
               "href": "http://m.scau.edu.cn:12048/campusRepair/index.html",
-              "icon": "fa fa-tachometer",
+              "icon": "fa fa-paper-plane",
               "target": "_self",
               "title": "校内报修"
             },
             {
               "href": "http://estop.scau.edu.cn/portal/letter_sy.jsp",
-              "icon": "fa fa-tachometer",
+              "icon": "fa fa-paper-plane",
               "target": "_self",
               "title": "校长信箱"
             }
@@ -71,45 +71,71 @@
         },
         {
           "title": "校长有约",
-          "href": "",
+          "href": "page/xzyy.html",
           "icon": "fa fa-home",
           "target": "_self",
           "child": [
             {
-              "href": "page/xiaozhangyouyue12.html",
-              "icon": "fa fa-tachometer",
+              "href": "page/tianluoshi.html",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
-              "title": "第12期校长有约"
+              "title": "提案落实"
             },
             {
-              "href": "page/xiaozhangyouyue13.html",
-              "icon": "fa fa-tachometer",
+              "href": "",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
-              "title": "第13期校长有约"
+              "title": "\"校长有约\"",
+              "child" : [
+                {
+                  "href": "page/xzyy12.html",
+                  "icon": "layui-icon layui-icon-file",
+                  "target": "_self",
+                  "title": "第12期校长有约"
+                },
+                {
+                  "href": "page/xzyy13.html",
+                  "icon": "layui-icon layui-icon-file",
+                  "target": "_self",
+                  "title": "第13期校长有约"
+                },
+                {
+                  "href": "page/xzyy14.html",
+                  "icon": "layui-icon layui-icon-file",
+                  "target": "_self",
+                  "title": "第14期校长有约"
+                },
+                {
+                  "href": "page/xzyy15.html",
+                  "icon": "layui-icon layui-icon-file",
+                  "target": "_self",
+                  "title": "第15期校长有约"
+                },
+                {
+                  "href": "page/xzyy16.html",
+                  "icon": "layui-icon layui-icon-file",
+                  "target": "_self",
+                  "title": "第16期校长有约"
+                }
+              ]
             },
             {
-              "href": "page/xiaozhangyouyue14.html",
-              "icon": "fa fa-tachometer",
+              "href": "page/quanyixiaoce.html",
+              "icon": "layui-icon layui-icon-form",
               "target": "_self",
-              "title": "第14期校长有约"
+              "title": "权益小册"
             },
             {
-              "href": "page/xiaozhangyouyue15.html",
-              "icon": "fa fa-tachometer",
+              "href": "page/proposal.html",
+              "icon": "fa fa-leaf",
               "target": "_self",
-              "title": "第15期校长有约"
-            },
-            {
-              "href": "page/xiaozhangyouyue16.html",
-              "icon": "fa fa-tachometer",
-              "target": "_self",
-              "title": "第16期校长有约"
+              "title": "提案征集"
             }
           ]
         },
         {
           "href": "page/comment.html",
-          "icon": "fa fa-tachometer",
+          "icon": "fa fa-leaf",
           "target": "_self",
           "title": "留言板"
         }
